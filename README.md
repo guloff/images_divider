@@ -1,37 +1,61 @@
-# Image Divider
+# Image Divider Script
 
-The Image Divider is a Python utility designed to automatically divide images into four equal parts. This tool is particularly useful for graphic designers, developers, and anyone needing to quickly split images for content creation, website design, or any other purpose.
+## Description
+
+This Python script processes all images in a given folder and divides each image into four equal parts: top-left, top-right, bottom-left, and bottom-right. The resulting image parts are saved with descriptive names indicating their position in the original image. The script supports image formats such as `.jpg`, `.jpeg`, `.png`, and `.bmp`.
 
 ## Features
 
-- **Batch Processing**: Process an entire folder of images in one go, saving time and effort.
-- **Support for Popular Formats**: Works with JPG, JPEG, PNG, and BMP image formats.
-- **Simple Usage**: Easy to use with a minimal setup required.
-- **Cross-Platform**: Runs on any operating system that supports Python and PIL, including Windows, macOS, and Linux.
+- **Divide Images**: Splits each image into four equal sections based on width and height.
+- **Batch Processing**: Automatically processes all compatible images in a specified folder.
+- **Multiple Formats**: Supports image formats including `.jpg`, `.jpeg`, `.png`, and `.bmp`.
 
-## Prerequisites
+## Requirements
 
-Before you run the Image Divider, make sure you have Python 3.x installed on your system along with the PIL (Python Imaging Library) module. If you don't have PIL installed, you can install it using pip:
+- **Python 3.x**
+- **Pillow**: The `PIL` library is part of the `Pillow` package, which you need to install to run this script.
 
-```
-pip install Pillow
-```
+### Install Pillow
 
-## How to Use
+You can install Pillow via pip:
 
-1. Clone this repository or download the source code to your local machine.
-2. Ensure you have a folder with the images you wish to divide.
-3. Update the `folder` variable in the example usage with the path to your images folder.
-4. Run the script using Python:
-
-```
-python main.py
+```bash
+pip install pillow
 ```
 
-## Customization
+## Usage
 
-The Image Divider can be easily customized to suit different needs. You can modify the script to change the output image format, the naming convention of divided images, or even the number of divisions.
+1. **Clone the repository** or download the script file to your local machine.
 
-## Contributing
+2. **Specify the folder containing the images**: Adjust the `folder` variable in the script to point to the folder with the images you want to process.
 
-Contributions are welcome! If you have suggestions for improvements or bug fixes, please feel free to fork the repository, make your changes, and submit a pull request.
+3. **Run the script**:
+
+   ```bash
+   python image_divider.py
+   ```
+
+   The script will find all compatible images in the specified folder, divide each image into four parts, and save the new images in the same folder with descriptive filenames.
+
+### Example
+
+Given an image named `example.jpg`, the script will output:
+
+- `example_top_left.jpg`
+- `example_top_right.jpg`
+- `example_bottom_left.jpg`
+- `example_bottom_right.jpg`
+
+## Notes
+
+- Ensure the folder contains image files in supported formats (`.jpg`, `.jpeg`, `.png`, `.bmp`).
+- The original image files will not be modified. New images will be saved alongside the originals with modified filenames.
+- If the script encounters an issue (e.g., unsupported file or corrupted image), an error message will be displayed.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+This script utilizes the `Pillow` library for image processing. More information about `Pillow` can be found in its official documentation: https://pillow.readthedocs.io/en/stable/.
